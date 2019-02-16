@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: producer.app
+---
+testFramework: spock
+sourceLanguage: groovy
