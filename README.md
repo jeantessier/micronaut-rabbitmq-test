@@ -11,7 +11,11 @@ You can start the message producer with the following command:
 
     $ (cd producer-app && ./gradlew run)
 
-Just hit Ctrl-C to stop it when you're done.
+You can start one or more message consumers with the following command:
+
+    $ (cd consumer-app && ./gradlew run)
+
+Just hit Ctrl-C in each shell to stop it when you're done.
 
 ## To Trigger a Message
 
