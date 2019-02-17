@@ -24,11 +24,11 @@ dependencyManagement {
 
 configurations {
 	// for dependencies that are needed for development only
-	developmentOnly 
+	developmentOnly
 }
 
 dependencies {
-    compile "io.micronaut.configuration:micronaut-rabbitmq"
+    compile "io.micronaut.configuration:micronaut-rabbitmq:1.1.0.M1"
     compile "io.micronaut:micronaut-http-client"
     compile "io.micronaut:micronaut-http-server-netty"
     compile "io.micronaut:micronaut-runtime-groovy"
