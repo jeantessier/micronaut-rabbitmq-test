@@ -6,6 +6,7 @@ import io.micronaut.http.annotation.Get
 
 import javax.inject.*
 
+import producer.app.event.Event
 import producer.app.event.EventProducer
 
 @Controller("/hello")
@@ -16,7 +17,7 @@ class HelloController {
 
     @Get(produces = MediaType.TEXT_PLAIN)
     def index() {
-        eventProducer.send("Hello World")
+        eventProducer.send(new Event(message: "Hello World", date: new Date()))
 
         return "OK"
     }
