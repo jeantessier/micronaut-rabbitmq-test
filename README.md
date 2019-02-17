@@ -20,3 +20,12 @@ Just hit Ctrl-C in each shell to stop it when you're done.
 ## To Trigger a Message
 
     $ curl http://localhost:8080/hello
+
+## Exchanges and Queues
+
+The applications create the RabbbitMQ resources they need if they cannot find
+them.  The producer only creates an exchange (of type `topic`), since that is
+all it needs.  The consumer will create an exchange, a queue, and bind the queue
+to the exchange, as needed.
+
+Look at each application's `Topology` class for details.
