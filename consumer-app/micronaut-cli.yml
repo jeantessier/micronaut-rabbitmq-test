@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: consumer.app
+---
+testFramework: spock
+sourceLanguage: groovy

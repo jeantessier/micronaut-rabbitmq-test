@@ -1,0 +1,9 @@
+---
+micronaut:
+    application:
+        name: consumer-app
+jackson:
+    module-scan: false
+---
+#rabbitmq:
+#    uri: amqp://localhost:5672
