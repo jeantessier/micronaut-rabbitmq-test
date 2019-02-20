@@ -4,6 +4,8 @@ micronaut:
         name: producer-app
 jackson:
     module-scan: false
+    serialization:
+        writeDatesAsTimestamps: false
 ---
 #rabbitmq:
 #    uri: amqp://localhost:5672
