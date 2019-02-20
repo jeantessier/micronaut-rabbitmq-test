@@ -9,7 +9,7 @@ import javax.inject.*
 import producer.app.event.Event
 import producer.app.event.EventProducer
 
-@Controller("/hello")
+@Controller("/")
 class HelloController {
 
     @Inject
