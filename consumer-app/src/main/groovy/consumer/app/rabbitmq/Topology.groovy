@@ -1,38 +1,19 @@
 package consumer.app.rabbitmq
 
+import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel
-import io.micronaut.configuration.rabbitmq.connect.ChannelPool
-import io.micronaut.context.event.BeanCreatedEvent
-import io.micronaut.context.event.BeanCreatedEventListener
+import io.micronaut.configuration.rabbitmq.connect.ChannelInitializer;
 
 import javax.inject.Singleton
 
 @Singleton
-class Topology implements BeanCreatedEventListener<ChannelPool> {
+class Topology extends ChannelInitializer {
 
     @Override
-    ChannelPool onCreated(BeanCreatedEvent<ChannelPool> event) {
-        ChannelPool pool = event.bean
-        Channel channel = null
-        try {
-            channel = pool.channel
-        } catch (IOException e) {
-            // The channel couldn't be retrieved
-        }
-
-        if (channel != null) {
-            try {
-                channel.exchangeDeclare("micronaut.rabbitmq.test.events", "topic")
-                channel.queueDeclare("micronaut.rabbitmq.test.events.consumer", false, false, false, [:])
-                channel.queueBind("micronaut.rabbitmq.test.events.consumer", "micronaut.rabbitmq.test.events", "#")
-            } catch (any) {
-                //no-op
-            } finally {
-                pool.returnChannel(channel)
-            }
-        }
-
-        pool
+    void initialize(Channel channel) {
+        channel.exchangeDeclare("micronaut.rabbitmq.test.events", BuiltinExchangeType.TOPIC)
+        channel.queueDeclare("micronaut.rabbitmq.test.events.consumer", false, false, false, [:])
+        channel.queueBind("micronaut.rabbitmq.test.events.consumer", "micronaut.rabbitmq.test.events", "#")
     }
 
 }
