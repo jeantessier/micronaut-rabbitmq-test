@@ -4,8 +4,6 @@ micronaut:
         name: consumer-app
     server:
         port: -1
-jackson:
-    module-scan: false
 ---
 #rabbitmq:
 #    uri: amqp://localhost:5672

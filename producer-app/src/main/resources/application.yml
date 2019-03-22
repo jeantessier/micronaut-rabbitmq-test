@@ -3,7 +3,6 @@ micronaut:
     application:
         name: producer-app
 jackson:
-    module-scan: false
     serialization:
         writeDatesAsTimestamps: false
 ---
