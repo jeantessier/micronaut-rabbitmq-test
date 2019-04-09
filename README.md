@@ -19,7 +19,7 @@ Just hit Ctrl-C in each shell to stop it when you're done.
 
 ## To Trigger a Message
 
-    $ curl http://localhost:8080/hello
+    $ http :8080
 
 ## Exchanges and Queues
 
