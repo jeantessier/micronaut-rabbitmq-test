@@ -7,7 +7,7 @@ import io.micronaut.configuration.rabbitmq.connect.ChannelInitializer;
 import javax.inject.Singleton
 
 @Singleton
-class Topology extends ChannelInitializer {
+class Topography extends ChannelInitializer {
 
     @Override
     void initialize(Channel channel) {
