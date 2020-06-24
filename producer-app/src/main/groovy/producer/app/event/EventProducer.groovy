@@ -1,7 +1,7 @@
 package producer.app.event
 
-import io.micronaut.configuration.rabbitmq.annotation.Binding
-import io.micronaut.configuration.rabbitmq.annotation.RabbitClient
+import io.micronaut.rabbitmq.annotation.Binding
+import io.micronaut.rabbitmq.annotation.RabbitClient
 
 @RabbitClient("micronaut.rabbitmq.test.events")
 abstract class EventProducer {

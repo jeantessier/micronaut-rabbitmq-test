@@ -2,7 +2,7 @@ package consumer.app.rabbitmq
 
 import com.rabbitmq.client.BuiltinExchangeType;
 import com.rabbitmq.client.Channel
-import io.micronaut.configuration.rabbitmq.connect.ChannelInitializer;
+import io.micronaut.rabbitmq.connect.ChannelInitializer;
 
 import javax.inject.Singleton
 

@@ -1,7 +1,7 @@
 package consumer.app.consumer
 
-import io.micronaut.configuration.rabbitmq.annotation.Queue
-import io.micronaut.configuration.rabbitmq.annotation.RabbitListener
+import io.micronaut.rabbitmq.annotation.Queue
+import io.micronaut.rabbitmq.annotation.RabbitListener
 
 import java.text.SimpleDateFormat
 
