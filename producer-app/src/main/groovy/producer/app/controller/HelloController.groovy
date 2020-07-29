@@ -16,8 +16,9 @@ class HelloController {
     EventProducer eventProducer
 
     @Get(produces = MediaType.TEXT_PLAIN)
-    def index() {
-        eventProducer.send(new Event(message: "Hello World", date: new Date()))
+    def index(Optional<String> name) {
+        def message = name.present ? "Hello, ${name.get()}!" : "Hello, world!"
+        eventProducer.send(new Event(message: message, date: new Date()))
 
         return "OK"
     }

@@ -21,6 +21,10 @@ Just hit Ctrl-C in each shell to stop it when you're done.
 
     $ http :8080
 
+or
+
+    $ http :8080 name=="Jean Tessier"
+
 ## Exchanges and Queues
 
 The applications create the RabbbitMQ resources they need if they cannot find
