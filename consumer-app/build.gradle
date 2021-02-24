@@ -9,7 +9,6 @@ group "consumer.app"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 micronaut {

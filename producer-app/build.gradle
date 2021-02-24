@@ -9,7 +9,6 @@ group "producer.app"
 
 repositories {
     mavenCentral()
-    jcenter()
 }
 
 micronaut {
