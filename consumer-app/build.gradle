@@ -1,7 +1,7 @@
 plugins {
     id "groovy"
     id "com.github.johnrengelman.shadow" version "7.0.0"
-    id "io.micronaut.application" version '1.5.4'
+    id "io.micronaut.application" version '2.0.4'
 }
 
 version "0.1"
@@ -21,15 +21,19 @@ micronaut {
 }
 
 dependencies {
-    implementation("io.micronaut:micronaut-validation")
-    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut.groovy:micronaut-runtime-groovy")
     implementation("io.micronaut.rabbitmq:micronaut-rabbitmq")
+    implementation("javax.annotation:javax.annotation-api")
+    compileOnly("io.micronaut:micronaut-http-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
+    implementation("io.micronaut:micronaut-validation")
 }
 
-mainClassName = "consumer.app.Application"
+application {
+    mainClassName = "consumer.app.Application"
+}
 java {
-    sourceCompatibility = JavaVersion.toVersion('1.8')
-    targetCompatibility = JavaVersion.toVersion('1.8')
+    sourceCompatibility = JavaVersion.toVersion('16')
+    targetCompatibility = JavaVersion.toVersion('16')
 }
