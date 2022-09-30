@@ -1,23 +1,15 @@
 plugins {
-    id "groovy"
-    id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "io.micronaut.application" version '3.6.0'
+    id("groovy")
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version '3.6.2'
+    id("io.micronaut.test-resources") version "3.6.2"
 }
 
-version "0.1"
-group "producer.app"
+version = "0.1"
+group = "producer.app"
 
 repositories {
     mavenCentral()
-}
-
-micronaut {
-    runtime "netty"
-    testRuntime "spock2"
-    processing {
-        incremental true
-        annotations "producer.app.*"
-    }
 }
 
 dependencies {
@@ -31,9 +23,22 @@ dependencies {
 }
 
 application {
-    mainClassName = "producer.app.Application"
+    mainClass.set("producer.app.Application")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion('16')
     targetCompatibility = JavaVersion.toVersion('16')
+}
+
+graalvmNative.toolchainDetection = false
+micronaut {
+    runtime("netty")
+    testRuntime("spock2")
+    processing {
+        incremental(true)
+        annotations("producer.app.*")
+    }
+    testResources {
+        sharedServer = true
+    }
 }
