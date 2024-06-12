@@ -32,4 +32,4 @@ them.  The producer only creates an exchange (of type `topic`), since that is
 all it needs.  The consumer will create an exchange, a queue, and bind the queue
 to the exchange, as needed.
 
-Look at each application's `Topology` class for details.
+Look at each application's `Topography` class for details.

@@ -9,9 +9,11 @@ import jakarta.inject.Singleton
 @Singleton
 class Topography extends ChannelInitializer {
 
+    static final EXCHANGE_NAME = "micronaut.rabbitmq.test.events"
+
     @Override
     void initialize(Channel channel, String name) throws IOException {
-        channel.exchangeDeclare("micronaut.rabbitmq.test.events", BuiltinExchangeType.TOPIC)
+        channel.exchangeDeclare(EXCHANGE_NAME, BuiltinExchangeType.TOPIC)
     }
 
 }
