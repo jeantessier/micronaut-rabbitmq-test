@@ -7,6 +7,10 @@ that reads from a queue.  The exchange is bound to the queue inside RabbitMQ.
 
 ## To Run
 
+Whichever application starts first will launch a RabbitMQ instance in a Docker
+container.  Edit `rabbitmq.uri` in `application.properties` to use your own
+RabbitMQ instance instead.
+
 You can start the message producer with the following command:
 
     $ (cd producer-app && ./gradlew run)
